@@ -1,0 +1,23 @@
+<h3>This is My Book Keeper Project.</h3>
+
+<form  (ngSubmit)="addBook()">
+BookID:	<br><br><input type="text" [(ngModel)]="id" > <br><br>
+BookTitle:	<input type="text" [(ngModel)]="title" > <br><br>
+BookAuthor: <input type="text" [(ngModel)]="author" > <br><br> 
+</form>
+
+<br><br>
+<table >
+ <tr>
+<th>Id</th>
+<th>Title</th> 
+<th>Author</th>
+<th>Delete</th>
+</tr>
+<tr *ngFor="let book of books">
+<td>{{book.id}}</td>
+<td>{{book.title}}</td>
+<td>{{book.author}}</td>
+ <td><button (click)="deleteBook(book.id)">Delete Book</button></td>
+</tr>
+</table>
